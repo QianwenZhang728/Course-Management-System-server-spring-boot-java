@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+          rel="stylesheet">
+    <!-- <script src="https://kit.fontawesome.com/e43b47be0c.js" crossorigin="anonymous"></script>-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="course-editor.style.client.css">
+    <!--Javascript and JQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<!--navbar-->
+<nav class="navbar navbar-expand-md">
+    <a href="#" class="wbdv-course-editor wbdv-close">
+        <i class="fa fa-times pull-left"></i>
+    </a>
+    <div class="navbar-brand wbdv-course-title">
+        CS5610-WebDev
+    </div>
+
+    <!-- Collapse button on sm screen-->
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav">
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                    <a class="nav-link wbdv-lesson-tabs" href="#">Build</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link wbdv-lesson-tabs" href="#">Pages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link wbdv-lesson-tabs" href="#">Theme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link wbdv-lesson-tabs" href="#">Stores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link wbdv-lesson-tabs" href="#">Apps</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link wbdv-lesson-tabs" href="#">Settings</a>
+                </li>
+            </ul>
+        </div>
+
+        <a href="" class="btn">
+            <i class="fa fa-plus wbdv-lesson-add-btn"></i>
+        </a>
+    </div>
+</nav>
+
+<!--Modules, topics and widgets-->
+<div class="container-fluid row">
+    <!-- Modules -->
+    <div class="col-4">
+        <nav class="nav nav-pills flex-column wbdv-module-list">
+            <a href="#" class="nav-item nav-link wbdv-module-item wbdv-module-item-title">
+                Module 1 - <i class="fa fa-times pull-right wbdv-module-item-delete-btn"></i>
+            </a>
+            <a href="#" class="nav-item nav-link wbdv-module-item wbdv-module-item-title">
+                Module 2 - React<i class="fa fa-times pull-right wbdv-module-item-delete-btn"></i>
+            </a>
+            <a href="#" class="nav-item nav-link wbdv-module-item wbdv-module-item-title">
+                Module 3 - Redux<i class="fa fa-times pull-right wbdv-module-item-delete-btn"></i>
+            </a>
+            <a href="#" class="nav-item nav-link wbdv-module-item wbdv-module-item-title">
+                Module 4 - Native<i class="fa fa-times pull-right wbdv-module-item-delete-btn"></i>
+            </a>
+            <a href="#" class="nav-item nav-link wbdv-module-item wbdv-module-item-title">
+                Module 5 - Angular<i class="fa fa-times pull-right wbdv-module-item-delete-btn"></i>
+            </a>
+            <a href="#" class="nav-item nav-link wbdv-module-item wbdv-module-item-title">
+                Module 6 - Node<i class="fa fa-times pull-right wbdv-module-item-delete-btn"></i
+            </a>
+            <a href="#" class="nav-item nav-link wbdv-module-item wbdv-module-item-title">
+                Module 7 - Mongo<i class="fa fa-times pull-right wbdv-module-item-delete-btn"></i>
+            </a>
+            <a href="" class="btn">
+                <i class="fa fa-plus wbdv-module-item-add-btn pull-right"></i>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Topics -->
+    <div class="col-8">
+        <div>
+            <ul class="nav nav-pills wbdv-topic-pill-list">
+                <li class="nav-item wbdv-topic-pill">
+                    <a class="nav-link" href="#">Topic 1</a>
+                </li>
+                <li class="nav-item wbdv-topic-pill">
+                    <a class="nav-link active" href="#">Topic 2</a>
+                </li>
+                <li class="nav-item wbdv-topic-pill">
+                    <a class="nav-link" href="#">Topic 3</a>
+                </li>
+                <li class="nav-item wbdv-topic-pill">
+                    <a class="nav-link" href="#">Topic 4</a>
+                </li>
+                <li>
+                    <a href="" class="btn">
+                        <i class="fa fa-plus wbdv-topic-add-btn"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- icons-->
+        <div class="text-right">
+            <button type="button" class="btn btn-success btn-sm">Save</button>
+            <h>Preview</h>
+            <a href="#"><i class="fa fa-toggle-off"></i></a>
+        </div>
+
+        <!-- Widget-->
+        <div class="wbdv-light-grey-border">
+            <h3 class="heading-widget">
+                Heading Widget
+                <span class="pull-right">
+                        <a href="#" class="btn btn-warning">
+                            <i class="fa fa-arrow-up fa-sm"></i>
+                        </a>
+                        <a href="#" class="btn btn-warning">
+                            <i class="fa fa-arrow-down"></i>
+                        </a>
+
+                        <select name="" id="" class="select-type">
+                            <option value="">Heading</option>
+                            <option value="">Youtube</option>
+                            <option value="">Slides</option>
+                            <option value="">Image</option>
+                            <option value="">List</option>
+                        </select>
+
+                        <a href="#" class="btn btn-danger">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </span>
+            </h3>
+
+            <input type="text" class="form-control heading-text" placeholder="Heading text">
+            <select name="" class="form-control heading-select">
+                <option>Heading 1</option>
+                <option>Heading 2</option>
+                <option>Heading 3</option>
+                <option>Heading 4</option>
+            </select>
+            <input type="text" class="form-control widget-name" placeholder="Widget name">
+
+            <p>Preview</p>
+            <h2>Heading text</h2>
+        </div>
+        <a href="#"><i class="fa fa-calendar-plus-o pull-right"></i></a>
+    </div>
+</div>
+
+
+</body>
+</html>

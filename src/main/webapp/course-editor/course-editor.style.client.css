@@ -1,0 +1,57 @@
+.navbar-nav, .nav-pills {
+    width: 100%;
+}
+
+.navbar .nav-item {
+    background-color: #006a71;
+    margin-right: 10px;
+}
+
+.navbar {
+    background-color: #68b0ab;
+}
+
+.navbar-brand, .fa-times, .nav-link, .fa-plus {
+    color: White;
+}
+
+.nav-item {
+    background-color: #68b0ab;
+    margin-top: 10px;
+}
+
+.wbdv-topic-pill {
+    margin-right: 10px;
+}
+
+.active {
+    background-color: #BFDCAE;
+}
+
+.col-4 {
+    background-color: #006a71;
+}
+
+span {
+    font-size:0.8em;
+}
+
+.fa-toggle-off {
+    font-size: 1.5em;
+    color: black;
+}
+
+.heading-text, .heading-select, .widget-name, p, h2 {
+    margin-top: 10px;
+}
+
+.wbdv-light-grey-border {
+    margin-top: 15px;
+    padding: 10px 10px;
+}
+
+.fa-calendar-plus-o {
+    margin-top: 10px;
+    font-size: 1.5em;
+    color: black;
+}
