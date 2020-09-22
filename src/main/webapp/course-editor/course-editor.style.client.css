@@ -7,15 +7,29 @@
     margin-right: 10px;
 }
 
+.navbar-brand-combination {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .navbar {
     background-color: #68b0ab;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+.navbar .fa-times {
+    position: relative;
+    right: 20px;
+    font-size: 1.5em;
 }
 
 .navbar-brand, .fa-times, .nav-link, .fa-plus {
     color: White;
 }
 
-.nav-item {
+.modules .nav-item, .topics .nav-item {
     background-color: #68b0ab;
     margin-top: 10px;
 }
@@ -28,7 +42,7 @@
     background-color: #BFDCAE;
 }
 
-.col-4 {
+.modules {
     background-color: #006a71;
 }
 

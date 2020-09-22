@@ -27,52 +27,57 @@
 <body>
 <!--navbar-->
 <nav class="navbar navbar-expand-md">
-    <a href="#" class="wbdv-course-editor wbdv-close">
-        <i class="fa fa-times pull-left"></i>
-    </a>
-    <div class="navbar-brand wbdv-course-title">
-        CS5610-WebDev
+    <div class="col-4 navbar-brand-combination">
+        <a href="#" class="wbdv-course-editor wbdv-close">
+            <i class="fa fa-times"></i>
+        </a>
+        <div class="navbar-brand wbdv-course-title">
+            CS5610-WebDev
+        </div>
     </div>
 
     <!-- Collapse button on sm screen-->
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="col-8">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-        <div class="navbar-nav">
-            <ul class="nav nav-pills nav-fill">
-                <li class="nav-item">
-                    <a class="nav-link wbdv-lesson-tabs" href="#">Build</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link wbdv-lesson-tabs" href="#">Pages</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link wbdv-lesson-tabs" href="#">Theme</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link wbdv-lesson-tabs" href="#">Stores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link wbdv-lesson-tabs" href="#">Apps</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link wbdv-lesson-tabs" href="#">Settings</a>
-                </li>
-            </ul>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link wbdv-lesson-tabs" href="#">Build</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link wbdv-lesson-tabs" href="#">Pages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link wbdv-lesson-tabs" href="#">Theme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link wbdv-lesson-tabs" href="#">Stores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link wbdv-lesson-tabs" href="#">Apps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link wbdv-lesson-tabs" href="#">Settings</a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="" class="btn">
+                <i class="fa fa-plus wbdv-lesson-add-btn"></i>
+            </a>
         </div>
-
-        <a href="" class="btn">
-            <i class="fa fa-plus wbdv-lesson-add-btn"></i>
-        </a>
     </div>
+
 </nav>
 
 <!--Modules, topics and widgets-->
 <div class="container-fluid row">
     <!-- Modules -->
-    <div class="col-4">
+    <div class="col-4 modules">
         <nav class="nav nav-pills flex-column wbdv-module-list">
             <a href="#" class="nav-item nav-link wbdv-module-item wbdv-module-item-title">
                 Module 1 - <i class="fa fa-times pull-right wbdv-module-item-delete-btn"></i>
@@ -103,7 +108,7 @@
 
     <!-- Topics -->
     <div class="col-8">
-        <div>
+        <div class="topics">
             <ul class="nav nav-pills wbdv-topic-pill-list">
                 <li class="nav-item wbdv-topic-pill">
                     <a class="nav-link" href="#">Topic 1</a>
@@ -137,22 +142,21 @@
             <h3 class="heading-widget">
                 Heading Widget
                 <span class="pull-right">
-                        <a href="#" class="btn btn-warning">
+                        <a href="#" class="btn btn-warning wbdb-widget-position-up">
                             <i class="fa fa-arrow-up fa-sm"></i>
                         </a>
-                        <a href="#" class="btn btn-warning">
+                        <a href="#" class="btn btn-warning wbdb-widget-position-down">
                             <i class="fa fa-arrow-down"></i>
                         </a>
 
                         <select name="" id="" class="select-type">
-                            <option value="">Heading</option>
-                            <option value="">Youtube</option>
-                            <option value="">Slides</option>
-                            <option value="">Image</option>
-                            <option value="">List</option>
+                            <option value="Heading">Heading</option>
+                            <option value="Paragraph">Paragraph</option>
+                            <option value="List">List</option>
+                            <option value="Image">Image</option>
                         </select>
 
-                        <a href="#" class="btn btn-danger">
+                        <a href="#" class="btn btn-danger wbdb-widget-delete-btn">
                             <i class="fa fa-trash"></i>
                         </a>
                     </span>
@@ -170,7 +174,7 @@
             <p>Preview</p>
             <h2>Heading text</h2>
         </div>
-        <a href="#"><i class="fa fa-calendar-plus-o pull-right"></i></a>
+        <a href="#"><i class="fa fa-calendar-plus-o pull-right wbdv-widget-add-btn"></i></a>
     </div>
 </div>
 
