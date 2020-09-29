@@ -1,113 +1,112 @@
 (function () {
-    var $usernameFld, $passwordFld;
-    var $removeBtn, $editBtn, $createBtn;
-    var $firstNameFld, $lastNameFld, $roleFld;
-    var $userRowTemplate, $tbody;
-    var userService = new AdminUserServiceClient();
-    let users
-    let tbody
-    let template
-    let clone
+    let $usernameFld, $passwordFld;
+    let $removeBtn, $editBtn, $createBtn, $updateBtn;
+    let $firstNameFld, $lastNameFld, $roleFld;
+    let $userRowTemplate, $tbody;
+    let userService = new AdminUserServiceClient();
+    let users, clone, selectedUserIndex
+
 
     $(main);
     function main() {
-        tbody = $("tbody")
-        template = $("tr.wbdv-template")
-        $createBtn = $(".wbdv-create").click(createUser)
-        $firstNameFld = $("#firstNameFld")
-        $usernameFld = $("#usernameFld")
-        $(".wbdv-update").click(updateUser)
-        $(".wbdv-create").click(createUser)
+        $tbody = $("tbody")
+        $userRowTemplate = $("tr.wbdv-template")
 
+        $usernameFld = $("#usernameFld")
+        $firstNameFld = $("#firstNameFld")
+        $lastNameFld = $("#lastNameFld")
+        $roleFld = $("#roleFld")
+
+        $createBtn = $(".wbdv-create").click(createUser)
+        $updateBtn = $(".wbdv-update").click(updateUser)
+
+        findAllUsers()
+    }
+
+    // function deleteUser1(event) {
+    //     const deleteBtn = $(event.currentTarget)
+    //     deleteBtn.parents("tr.wbdv-template").remove()
+    //     console.log(deleteBtn)
+    // }
+
+    function createUser() {
+        console.log("create")
+
+        const newUser = {
+            username: $usernameFld.val(),
+            first: $firstNameFld.val(),
+            last: $lastNameFld.val(),
+            role: $roleFld.val()
+        }
+
+        userService.createUser(newUser)
+            .then(response => findAllUsers())
+    }
+
+    function findAllUsers() {
         userService.findAllUsers()
             .then(function(_users) {
                 console.log(_users)
                 users = _users
                 renderUsers(users)
             })
-
     }
 
-    function createUser() {
-        const username = $usernameFld.val()
-        const firstName = $firstNameFld.val()
+    function findUserById(userId) {
 
-        $usernameFld.val("")
-        $firstNameFld.val("")
-
-        const newUser = {
-            username: username,
-            first: firstName,
-            last: 'TBD1',
-            role: 'TBD2'
-        }
-
-        userService.createUser(newUser)
-            .then(actualNewUser => {
-                users.push(actualNewUser)
-                renderUsers(users)
-            })
     }
-
-    function findAllUsers() { }
-    function findUserById() { }
 
     function deleteUser(_index) {
         const user = users[_index]
         const userId = user._id
 
         userService.deleteUser(userId)
-            .then(response => {
-                users.splice(_index, 1)
-                renderUsers(users)
-            })
+            .then(response => findAllUsers())
     }
 
-    let selectedUserIndex = -1
     function selectUser(index) {
         selectedUserIndex = index
         $("#usernameFld").val(users[index].username)
-        $("#firstnameFld").val(users[index].first)
-        $("#lastnameFld").val(users[index].last)
+        $("#firstNameFld").val(users[index].first)
+        $("#lastNameFld").val(users[index].last)
+        $("#roleFld").val(users[index].role)
 
     }
 
     function updateUser() {
         const newUserName = $("#usernameFld").val()
-        const newFirstName = $("#firstnameFld").val()
-        const newLastName = $("#lastnameFld").val()
+        const newFirstName = $("#firstNameFld").val()
+        const newLastName = $("#lastNameFld").val()
+        const newRole = $("#roleFld").val()
         const userId = users[selectedUserIndex]._id
 
         userService.updateUser(userId, {
             username: newUserName,
-            first: newFirstName
+            first: newFirstName,
+            last: newLastName,
+            role: newRole
         })
-            .then(response => {
-                users[selectedUserIndex].username = newUserName
-                users[selectedUserIndex].first = newFirstName
-                renderUsers(users)
-        })
-
-
+            .then(response => findAllUsers())
     }
 
     function renderUser(user) { }
 
     function renderUsers(users) {
-        tbody.empty()
+        $tbody.empty()
 
         for(let i = 0; i < users.length; i ++) {
             const user = users[i]
 
-            clone = template.clone()
+            clone = $userRowTemplate.clone()
 
             clone.find(".wbdv-username").text(user.username)
             clone.find(".wbdv-first-name").text(user.first)
             clone.find(".wbdv-last-name").text(user.last)
+            clone.find(".wbdv-role").text(user.role)
             clone.find(".wbdv-remove").click(() => deleteUser(i))
             clone.find(".wbdv-edit").click(() => selectUser(i))
 
-            tbody.append(clone)
+            $tbody.append(clone)
         }
     }
 })();
