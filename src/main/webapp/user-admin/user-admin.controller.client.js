@@ -4,7 +4,7 @@
     let $firstNameFld, $lastNameFld, $roleFld;
     let $userRowTemplate, $tbody;
     let userService = new AdminUserServiceClient();
-    let users, clone, selectedUserIndex
+    let users, clone, selectedUserIndex;
 
 
     $(main);
@@ -59,7 +59,8 @@
     }
 
     function findUserById(userId) {
-
+        userService.findUserById(userId)
+            .then(response => renderUser())
     }
 
     function deleteUser(_index) {
@@ -124,7 +125,16 @@
             })
     }
 
-    function renderUser(user) { }
+    function renderUser(user) {
+        for(let i = 0; i < users.length; i++) {
+            if (user._id === users[i]._id) {
+                users[i] = user
+            }
+        }
+
+        clearInputs()
+        renderUsers(users)
+    }
 
     function renderUsers(users) {
         $tbody.empty()
