@@ -8,11 +8,6 @@
     color: white;
 }
 
-form {
-    position: relative;
-    right: 100px;
-}
-
 .wbdv-add-course {
     position: relative;
     right: 20px;
@@ -51,9 +46,9 @@ form {
     padding-top: 15px;
 }
 
-.table-body {
-    border-left: 1px  solid grey;
-    border-right: 1px  solid grey;
-}
+/*.table-body {*/
+/*    border-left: 1px  solid grey;*/
+/*    border-right: 1px  solid grey;*/
+/*}*/
 
 
