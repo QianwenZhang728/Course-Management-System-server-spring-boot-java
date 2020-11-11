@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import com.example.myapp.models.Widget;
 import com.example.myapp.services.WidgetService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = "*")
 public class WidgetController {
-  WidgetService service = new WidgetService();
+  @Autowired
+  WidgetService service;
 
   @GetMapping("/hello")
   public String sayHello() {
@@ -39,7 +41,7 @@ public class WidgetController {
 
   @GetMapping("/api/widgets/{wid}")
   public Widget findWidgetById(
-      @PathVariable("wid") String widgetId) {
+      @PathVariable("wid") Integer widgetId) {
     return service.findWidgetById(widgetId);
   }
 
@@ -51,8 +53,8 @@ public class WidgetController {
   }
 
   @PutMapping("/api/widgets/{wid}")
-  public Integer updateWidget(
-      @PathVariable("wid") String widgetId,
+  public Widget updateWidget(
+      @PathVariable("wid") Integer widgetId,
       @RequestBody Widget newWidget) {
     return service.updateWidget(widgetId, newWidget);
   }
@@ -64,9 +66,9 @@ public class WidgetController {
 //  }
 
   @DeleteMapping("/api/widgets/{wid}")
-  public Integer deleteWidget(
-        @PathVariable("wid") String widgetId) {
-    return service.deleteWidget(widgetId);
+  public void deleteWidget(
+        @PathVariable("wid") Integer widgetId) {
+    service.deleteWidget(widgetId);
   }
 
 }
